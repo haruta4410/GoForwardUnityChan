@@ -27,4 +27,14 @@ public class CubeController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //課題：衝突時に呼ばれる関数
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "GroundTag" || collision.gameObject.tag == "BoxTag")
+        {
+            GetComponent<AudioSource>().Play();  // 効果音を鳴らす
+        }
+    }
+
 }
